@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me | My Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            background: linear-gradient(#d7f5d3, #ffffc5, #f47174);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding-top: 70px;
+            /* for fixed navbar */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgb(13, 3, 48) !important;
+        }
+
+        .navbar .nav-link {
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: #ffc107 !important;
+        }
+
+        .about-section {
+            max-width: 900px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #6f42c1;
+        }
+
+        @media (max-width: 576px) {
+            .about-section {
+                padding: 25px;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow">
+        <div class="container-fluid px-4">
+            <img src="logo4.png" alt="Logo" style="width: 170px; height: 40px; margin-bottom: 20px;" />
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link text-light" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="Contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="order.html">Order</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="follow.html">Follow</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="Products.html">Products</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Me Section -->
+    <section class="about-section mt-5">
+        <h1 class="text-center mb-4" style="font-weight: 700; color: #0d0330;">About Me</h1>
+
+        <div class="d-flex flex-column align-items-center text-center mb-4">
+            <img src="https://via.placeholder.com/150" alt="Creator Photo" class="profile-img mb-3" />
+        </div>
+
+        <div class="about-text text-center">
+            <p>
+                Hi, I'm <span class="highlight">Momin</span> – a young entrepreneur with a passion for <span
+                    class="highlight">business, technology</span>, and <span class="highlight">personal growth</span>.
+                I founded <strong>CustomHydration</strong> in <strong>2025</strong> with a clear mission: to make
+                hydration more <span class="highlight">sustainable</span> and <span class="highlight">personal</span>.
+                Our brand focuses on customizable <strong>metal</strong> and <strong>glass bottles</strong> that are
+                both eco-friendly and stylish.
+            </p>
+            <p>
+                My journey into entrepreneurship started early. Last summer, I gained valuable experience by
+                <strong>selling treats</strong>,
+                learning how to connect with customers and manage a small-scale operation. That experience sparked a
+                deeper interest in
+                building something <span class="highlight">bigger</span> – something with <strong>impact</strong>.
+            </p>
+            <p>
+                With CustomHydration, my goal is not just to sell products, but to help shape a <span
+                    class="highlight">low-carbon future</span>
+                through <strong>innovation</strong>, smart design, and <span class="highlight">purpose-driven
+                    business</span>. This is just the beginning.
+            </p>
+        </div>
+    </section>
+</body>
+
+</html>

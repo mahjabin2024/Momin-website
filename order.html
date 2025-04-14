@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(#ffdde1, #ee9ca7, #d6b8e6);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding-top: 60px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+            background-color: rgb(13, 3, 48);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+         .navbar .nav-link {
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: #ffc107 !important;
+        }
+
+
+        .order-form {
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+        }
+
+        .order-form h2 {
+            font-weight: 600;
+            color: #0d0330;
+            margin-bottom: 20px;
+        }
+
+        select,
+        input,
+        textarea {
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        select:focus,
+        input:focus,
+        textarea:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        .color-btn {
+            margin-right: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 2px solid #fff;
+        }
+
+        .color-btn:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .color-btn.selected {
+            box-shadow: 0 0 12px rgba(0, 123, 255, 0.8);
+            border: 2px solid #007bff;
+        }
+
+        .btn-outline-primary {
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 8px 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .btn-custom {
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 12px 20px;
+            transition: all 0.3s ease-in-out;
+            border: 2px solid #007bff;
+            /* Adding border */
+            color: #007bff;
+            /* Change text color to match the border */
+        }
+
+        .btn-custom:hover {
+            background-color: #007bff;
+            color: #fff;
+            transform: scale(1.05);
+            border-color: #0056b3;
+            /* Darker border color on hover */
+        }
+
+        #orderList {
+            margin-top: 15px;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #orderList li {
+            background: #f1f1f1;
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <img src="logo4.png" alt="Logo" style="width: 170px; height: 40px; margin-bottom: 10px;" />
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link text-light" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="Contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="order.html">Order</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="follow.html">Follow</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="Products.html">Products</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="order-form">
+        <h2 class="text-center mb-4"
+            style="font-size: 2.2rem; background: -webkit-linear-gradient(#007bff, #6f42c1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Order Your Favorite Now!
+        </h2>
+        <form id="orderForm" onsubmit="return validateOrderForm()">
+            <div class="mb-3">
+                <label for="product">Choose your product:</label>
+                <select id="product" onchange="handleProductChange()" class="form-select mt-2">
+                    <option value="" disabled selected>Select a product</option>
+                    <option value="stanley">Stanley</option>
+                    <option value="glass">Glass</option>
+                </select>
+
+                <div id="colorOptions" style="display: none; margin-top: 10px;">
+                    <p class="mt-3">Select a color:</p>
+                    <button type="button" class="color-btn"
+                        style="background: #000; border-radius: 50px; width: 25px; height: 25px;"
+                        onclick="selectColor('black', event)"></button>
+                    <button type="button" class="color-btn"
+                        style="background: #fff; border-radius: 50px; width: 25px; height: 25px;"
+                        onclick="selectColor('white', event)"></button>
+                    <button type="button" class="color-btn"
+                        style="background: #808080; border-radius: 50px; width: 25px; height: 25px;"
+                        onclick="selectColor('Grey', event)"></button>
+                </div>
+
+                <div id="letterOption" style="display: none; margin-top: 10px;">
+                    <label for="letter">Choose a letter:</label>
+                    <input type="text" id="letter" maxlength="1" placeholder="A-Z" class="form-control mt-1" />
+                </div>
+
+                <button type="button" class="btn btn-outline-primary mt-3" onclick="addToOrder()">
+                    <i class="bi bi-cart-plus"></i> Add to Cart
+                </button>
+
+                <ul id="orderList"></ul>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Quantity</label>
+                <input type="number" class="form-control" min="1" id="quantity" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Customization</label>
+                <textarea class="form-control" rows="3" id="address" required></textarea>
+            </div>
+            <button type="submit" class="btn-custom w-100">Place Order</button>
+        </form>
+    </div>
+
+    <script>
+        let selectedColor = null;
+
+        function validateOrderForm() {
+            const product = document.getElementById('product').value;
+            const quantity = document.getElementById('quantity').value;
+            const address = document.getElementById('address').value;
+
+            if (!product || !quantity || !address) {
+                alert("Please fill out all fields in the order form.");
+                return false;
+            }
+            return true;
+        }
+
+        function handleProductChange() {
+            const product = document.getElementById('product').value;
+            const colorOptions = document.getElementById('colorOptions');
+            const letterOption = document.getElementById('letterOption');
+
+            selectedColor = null;
+            document.getElementById('letter').value = "";
+
+            colorOptions.style.display = 'none';
+            letterOption.style.display = 'none';
+
+            const colorBtns = document.querySelectorAll('.color-btn');
+            colorBtns.forEach(btn => btn.classList.remove('selected'));
+
+            if (product === 'stanley') {
+                colorOptions.style.display = 'block';
+            } else if (product === 'glass') {
+                letterOption.style.display = 'block';
+            }
+        }
+
+        function selectColor(color, event) {
+            selectedColor = color;
+            const buttons = document.querySelectorAll('.color-btn');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+            event.target.classList.add('selected');
+        }
+
+        function addToOrder() {
+            const product = document.getElementById('product').value;
+            const orderList = document.getElementById('orderList');
+
+            if (!product) {
+                alert("Please select a product.");
+                return;
+            }
+
+            if (product === 'stanley' && !selectedColor) {
+                alert("Please choose a color for the Stanley.");
+                return;
+            }
+
+            if (product === 'glass') {
+                const letter = document.getElementById('letter').value.toUpperCase();
+                if (!letter.match(/^[A-Z]$/)) {
+                    alert("Please enter a valid letter (A-Z) for the Glass.");
+                    return;
+                }
+                const item = document.createElement('li');
+                item.textContent = `Glass with letter: ${letter}`;
+                orderList.appendChild(item);
+            }
+
+            if (product === 'stanley') {
+                const item = document.createElement('li');
+                item.textContent = `Stanley with color: ${selectedColor}`;
+                orderList.appendChild(item);
+            }
+
+            // Reset for next selection
+            document.getElementById('product').value = "";
+            document.getElementById('colorOptions').style.display = 'none';
+            document.getElementById('letterOption').style.display = 'none';
+            selectedColor = null;
+            document.getElementById('letter').value = "";
+            const colorBtns = document.querySelectorAll('.color-btn');
+            colorBtns.forEach(btn => btn.classList.remove('selected'));
+        }
+    </script>
+
+</body>
+
+</html>
