@@ -7,33 +7,47 @@
     <title>Contact & Follow Us</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    
+
     <style>
+        html,
         body {
+            height: 100%;
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #6dd5fa, #2980b9);
             color: #333;
         }
 
+        main {
+            min-height: calc(100vh - 160px);
+            /* Adjust for navbar and footer height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
         .info-follow-wrapper {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: stretch;
             gap: 30px;
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
             flex-wrap: wrap;
+            max-width: 1000px;
+            width: 100%;
         }
 
         .contact-info,
         .follow-container {
-            flex: 1;
-            min-width: 320px;
+            flex: 1 1 300px;
+            max-width: 450px;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
-            padding: 40px 30px;
+            padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .contact-info h2,
@@ -101,7 +115,6 @@
             background-color: #000;
         }
 
-
         .fa-linkedin:hover {
             background-color: #0077b5;
         }
@@ -119,9 +132,9 @@
         footer {
             background-color: #0d0330;
             padding: 30px 0;
-            margin-top: 50px;
             text-align: center;
             color: white;
+            margin-top: 0;
         }
 
         footer a {
@@ -140,7 +153,8 @@
                 align-items: center;
             }
         }
-        #cart{
+
+        #cart {
             margin-left: 720px;
         }
     </style>
@@ -150,7 +164,7 @@
     <nav class="navbar navbar-expand-lg" style="background-color: #0d0330;">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="#">
-                <img src="logo4.png" alt="Logo" style="width: 170px; height: 40px;" />
+                <img src="logo4.png" alt="Logo" style="width: 170px; height: 40px; margin-bottom: 10px;" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -162,8 +176,8 @@
                     <li class="nav-item"><a class="nav-link text-light" href="follow.html">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="Home.html#product">Products</a></li>
                     <li class="nav-item">
-                        <a id="cart" class="nav-link text-light" href="order.html">
-                            <i class="fas fa-shopping-cart"></i>
+                        <a class="nav-link text-light" style="margin-left:650px ;" href="order.html">
+                            <i class="fas fa-shopping-cart"></i> Order
                         </a>
                     </li>
                 </ul>
@@ -171,30 +185,36 @@
         </div>
     </nav>
 
-    <div class="info-follow-wrapper">
-        <div class="contact-info">
-            <h2>Contact Us</h2>
-            <p><i class="fas fa-envelope"></i><a href="mailto:info@customhydration.com">info@customhydration.com</a></p>
-            <p><i class="fas fa-phone"></i><a href="tel:+1234567890">+1 (234) 567-890</a></p>
-            <p><i class="fas fa-map-marker-alt"></i>hervanta Tampere, Finland</p>
-        </div>
 
-        <div class="follow-container">
-            <h2>Follow Us</h2>
-            <p>Stay connected with us through social media!</p>
-            <div class="social-icons">
-                <a href="#" class="fab fa-facebook"></a>
-                <a href="https://x.com/CustomHydratio"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
-                </svg></a>
-                <a href="https://www.instagram.com/customhydration2025/" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-                <a href="https://www.tiktok.com/@customhydration2025" class="fab fa-tiktok"></a>
+    <main>
+        <div class="info-follow-wrapper">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p><i class="fas fa-envelope"></i><a
+                        href="mailto:info@customhydration.com">customhydration2025@gmail.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i>hervanta Tampere, Finland</p>
+            </div>
+
+            <div class="follow-container">
+                <h2>Follow Us</h2>
+                <p>Stay connected with us through social media!</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61574271827124" class="fab fa-facebook"
+                        target="_blank"></a>
+                    <a href="https://x.com/CustomHydratio" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                            class="bi bi-twitter-x" viewBox="0 0 16 16">
+                            <path
+                                d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/customhydration2025/" class="fab fa-instagram"
+                        target="_blank"></a>
+                    <a href="https://www.tiktok.com/@customhydration2025" class="fab fa-tiktok" target="_blank"></a>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer>
         <p>&copy; 2025 CustomHydration. All rights reserved.</p>

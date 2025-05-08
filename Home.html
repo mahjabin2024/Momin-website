@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CustomHydration</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></script>
-    <link rel="stylesheet" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-    </link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,13 +43,22 @@
         @media (max-width: 1024px) {
             .background {
                 background-image: url('home4.jpg');
+                background-position: center;
             }
         }
 
-        /* Small screen */
+        @media (max-width: 1200px) {
+            .background {
+                background-image: url('home7.jpg');
+
+            }
+        }
+
+
         @media (max-width: 768px) {
             .background {
-                background-image: url('home5.jpg');
+                background-image: url('home6.jpg');
+                background-position: center;
             }
         }
 
@@ -180,7 +188,6 @@
             background-color: #333;
         }
 
-        /* Navbar align fix */
         .navbar-nav.left-links {
             margin-right: auto;
         }
@@ -189,7 +196,6 @@
             margin-left: auto;
         }
 
-        /* Responsive Styles */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -215,7 +221,8 @@
                 font-size: 14px;
             }
         }
-        #cart{
+
+        #cart {
             margin-left: 720px;
         }
     </style>
@@ -223,39 +230,29 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(13, 3, 48);">
+    <nav class="navbar navbar-expand-lg" style="background-color: #0d0330;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="Home.html">
-                <img src="logo4.png" alt="Logo" />
+            <a class="navbar-brand text-light" href="#">
+                <img src="logo4.png" alt="Logo" style="width: 170px; height: 40px; margin-bottom: 10px;" />
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav left-links">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link text-light" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="follow.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="Home.html#product">Products</a></li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="follow.html">Contact us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#product">Products</a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav right-cart">
-                    <li class="nav-item">
-                        <a id="cart" class="nav-link text-light" href="order.html">
-                            <i class="fas fa-shopping-cart"></i>
+                        <a class="nav-link text-light" style="margin-left: 700px;" href="order.html">
+                            <i class="fas fa-shopping-cart"></i> Order
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
 
     <!-- Hero Background -->
     <div class="background"></div>
@@ -264,30 +261,64 @@
     <h1>Our Products</h1>
     <div id="product" class="products-container">
         <!-- Glass -->
+        <!-- GLASS PRODUCT CARD UPDATED -->
         <div class="product-card">
             <div class="image-container">
                 <img id="glassImage" src="glasss.webp" alt="Glass Product Default">
             </div>
             <div class="product-info">
                 <h3>Glass</h3>
-                <p>Pick a letter and a design — your glass, your style!</p>
+                <p>Pick a design — your glass, your style!</p>
                 <p class="price">08.00 €</p>
                 <div class="options">
-                    <select id="glassLetter" onchange="updateGlassImage()">
+                    <select id="glassDesign" onchange="handleGlassDesignChange()" required>
+                        <option disabled selected>Select Design</option>
+                        <option value="flowers">Flowers with Initial</option>
+                        <option value="butterfly">Butterfly</option>
+                        <option value="onlytext">Only Text</option>
+                    </select>
+
+                    <!-- Letter dropdown (hidden by default) -->
+                    <select id="glassLetter" style="display:none;" onchange="updateGlassImage()">
                         <option disabled selected>Select Letter</option>
                         <option>A</option>
                         <option>B</option>
                         <option>C</option>
                         <option>D</option>
+                        <option>E</option>
+                        <option>F</option>
+                        <option>G</option>
+                        <option>H</option>
+                        <option>I</option>
+                        <option>J</option>
+                        <option>K</option>
+                        <option>L</option>
+                        <option>M</option>
+                        <option>N</option>
+                        <option>O</option>
+                        <option>P</option>
+                        <option>Q</option>
+                        <option>R</option>
+                        <option>S</option>
+                        <option>T</option>
+                        <option>U</option>
+                        <option>V</option>
+                        <option>W</option>
+                        <option>X</option>
+                        <option>Y</option>
+                        <option>Z</option>
                     </select>
-                    <select id="glassDesign" onchange="updateGlassImage()">
-                        <option disabled selected>Select Design</option>
-                        <option>Butterfly</option>
-                        <option>Flower</option>
+
+                    <!-- Finish dropdown (hidden by default) -->
+                    <select id="glassFinish" style="display:none;" onchange="updateGlassImage()">
+                        <option disabled selected>Choose Finish</option>
+                        <option value="clear">Clear</option>
+                        <option value="frosted">Frosted</option>
                     </select>
                 </div>
             </div>
         </div>
+
 
         <!-- Stanley -->
         <div class="product-card">
@@ -295,25 +326,44 @@
                 <img id="stanleyImage" src="stanley.jpg" alt="Stanley Product Default">
             </div>
             <div class="product-info">
-                <h3>Stanley</h3>
-                <p>Your Stanley, your vibe. Customize it with color and size!</p>
+                <h3>Tumbler</h3>
+                <p>Your Tumbler, your vibe. Customize it with color and size!</p>
                 <p class="price">25.00 €</p>
                 <div class="options">
                     <div class="colors">
-                        <span class="color" style="background-color:black;" onclick="updateStanleyImage('blue')"></span>
+                        <span class="color" style="background-color:black;"
+                            onclick="updateStanleyImage('black')"></span>
+                        <span class="color" style="background-color: rgb(22, 11, 241);"
+                            onclick="updateStanleyImage('blue')"></span>
                         <span class="color" style="background-color: white;"
-                            onclick="updateStanleyImage('orange')"></span>
-                        <span class="color" style="background-color: gray;" onclick="updateStanleyImage('aqua')"></span>
-                        <span class="color" style="background-color: pink;" onclick="updateStanleyImage('pink')"></span>
-                        <span class="color" style="background-color: burlywood;"
-                            onclick="updateStanleyImage('gray')"></span>
-                    </div>
-                    <select id="stanleySize" onchange="updateStanleyImage()">
-                        <option disabled selected>Select Size</option>
-                        <option>40oz</option>
-                        <option>60oz</option>
-                    </select>
+                            onclick="updateStanleyImage('white')"></span>
+                        <span class="color" style="background-color: rgb(211, 144, 156);" onclick="updateStanleyImage('pink')"></span>
+                        <span class="color" style="background-color: rgb(6, 95, 46);"
+                            onclick="updateStanleyImage('green')"></span>
+                        <span class="color" style="background-color:rgb(253, 8, 8);"
+                            onclick="updateStanleyImage('red')"></span>
+                    </div><br>
+                    <p style="font-weight: bold;">*Available size 40 ounce only </p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Ceramic mug -->
+        <div class="product-card">
+            <div class="image-container">
+                <img id="ceramic_mugimage" src="mug-pink.webp" alt="Ceramic Mug Default">
+            </div>
+            <div class="product-info">
+                <h3>Ceramic Mug</h3>
+                <p>Pour Love Daily – Because Mom Deserves the Best.</p>
+                <p class="price">19.95 €</p>
+                <div class="options">
+                    <div class="colors">
+                        <span class="color" style="background-color: gray;" onclick="updateMugImage('gray')"></span>
+                        <span class="color" style="background-color: pink;" onclick="updateMugImage('pink')"></span>
+                    </div>
+                </div>
+                <p style="color: red;">Mother's Day Special</p>
             </div>
         </div>
     </div>
@@ -333,25 +383,63 @@
 
     <!-- JavaScript -->
     <script>
-        function updateGlassImage() {
-            const letter = document.getElementById('glassLetter').value;
+        function handleGlassDesignChange() {
             const design = document.getElementById('glassDesign').value;
-            if (letter && design) {
-                const newImage = `glass-${letter.toUpperCase()}-${design.toLowerCase()}.jpg`;
-                document.getElementById('glassImage').src = newImage;
+            const letterSelect = document.getElementById('glassLetter');
+            const finishSelect = document.getElementById('glassFinish');
+
+            // Reset all dropdowns
+            letterSelect.style.display = 'none';
+            finishSelect.style.display = 'none';
+
+            if (design === 'flowers') {
+                letterSelect.style.display = 'block';
+            } else if (design === 'onlytext') {
+                finishSelect.style.display = 'block';
+            } else {
+                updateGlassImage(); // butterfly selected
             }
         }
+
+        function updateGlassImage() {
+            const design = document.getElementById('glassDesign').value;
+            const letter = document.getElementById('glassLetter').value;
+            const finish = document.getElementById('glassFinish').value;
+
+            let fileName = '';
+            let extension = 'jpg'; // default
+
+            if (design === 'flowers' && letter) {
+                fileName = `glass-${letter.toUpperCase()}-flowers`;
+                extension = 'webp';
+            } else if (design === 'onlytext' && finish) {
+                fileName = `glass-onlytext-${finish}`;
+                extension = 'webp';
+            } else if (design === 'butterfly') {
+                fileName = `glass-butterfly`;
+                extension = 'png';
+            }
+
+            if (fileName) {
+                document.getElementById('glassImage').src = `${fileName}.${extension}`;
+            }
+        }
+
 
         let selectedStanleyColor = '';
         function updateStanleyImage(color = '') {
             if (color) {
                 selectedStanleyColor = color;
             }
-            const size = document.getElementById('stanleySize').value.replace('oz', '');
-            if (selectedStanleyColor && size) {
-                const newImage = `stanley-${selectedStanleyColor}-${size}oz.jpg`;
+            if (selectedStanleyColor) {
+                const newImage = `stanley-${selectedStanleyColor}.webp`;
                 document.getElementById('stanleyImage').src = newImage;
             }
+        }
+
+        function updateMugImage(color) {
+            const newImage = `mug-${color}.webp`;
+            document.getElementById('ceramic_mugimage').src = newImage;
         }
     </script>
 </body>
